@@ -102,8 +102,8 @@
 (define (min-lon xs)
 
   (match xs
-    [`() 99999999999999999999999999999999999999999999]
-    [ (cons h t) (if (< h (min-lon t)) h (min-lon t))]
+    [(cons h`()) h]
+    [ (cons h t) (let ([x (min-lon t)]) (if (< h x) h x))]
     )
 
   
